@@ -1,6 +1,6 @@
 [package]
 name = "r2d2-memcache"
-version = "0.6.0"
+version = "0.6.1"
 authors = ["Keishi Kawada <Kk-shli@outlook.jp>", "An Long <aisk1988@gmail.com>"]
 license = "MIT"
 readme = "README.md"
@@ -8,6 +8,10 @@ description = "Memcached support for the r2d2 connection pool"
 repository = "https://github.com/megumish/r2d2-memcache"
 keywords = ["memcached", "memcache", "pool", "nosql", "database"]
 
+[features]
+default = ["tls"]
+tls = ["memcache/tls"]
+
 [dependencies]
 r2d2 = "0.8"
-memcache = "0.15"
+memcache = { version = "0.17", default-features = false }
